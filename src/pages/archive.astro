@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalendarPicker from '../components/calendar/CalendarPicker.svelte';
+import PuzzleCard from '../components/puzzle/PuzzleCard.svelte';
+
+export const prerender = false;
+---
+
+<BaseLayout title="Puzzle Archive" description="Browse and play past NYT Pips puzzles from any date.">
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+      <span class="text-gray-900 dark:text-gray-100 font-medium">Archive</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8 animate-fade-up">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">Puzzle Archive</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">Browse and play past Pips puzzles from any date.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
+      <!-- Calendar Section (3 cols) -->
+      <div class="lg:col-span-3 animate-fade-up">
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-4 sm:p-6">
+          <CalendarPicker client:load />
+        </div>
+
+        <!-- Puzzle Card (appears when date selected) -->
+        <div id="archive-puzzle-slot" class="mt-6">
+          <!-- PuzzleCard will be rendered here dynamically when a date is selected -->
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-8 text-center text-gray-400 dark:text-gray-500">
+            <svg class="w-12 h-12 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="font-medium">Select a date to view its puzzle</p>
+            <p class="text-sm mt-1">Click any highlighted date on the calendar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar (2 cols) -->
+      <div class="lg:col-span-2 space-y-4 animate-fade-up delay-100">
+        <!-- How to Use -->
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-5">
+          <h3 class="font-semibold mb-3 flex items-center gap-2 text-gray-900 dark:text-gray-100">
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            How to Use
+          </h3>
+          <ul class="space-y-2.5 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex gap-2.5">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center">1</span>
+              <span>Navigate months using the arrows</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center">2</span>
+              <span>Blue-highlighted dates have available puzzles</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center">3</span>
+              <span>Click a date to see puzzle details</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center">4</span>
+              <span>View full puzzle with hints and solutions</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-5">
+          <h3 class="font-semibold mb-3 flex items-center gap-2 text-gray-900 dark:text-gray-100">
+            <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Quick Stats
+          </h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 dark:text-gray-400">Puzzles Available</span>
+              <span class="font-semibold text-gray-900 dark:text-gray-100">365+</span>
+            </div>
+            <div class="border-t border-gray-100 dark:border-gray-800"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 dark:text-gray-400">Earliest Date</span>
+              <span class="font-semibold text-gray-900 dark:text-gray-100">Jan 2024</span>
+            </div>
+            <div class="border-t border-gray-100 dark:border-gray-800"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 dark:text-gray-400">Difficulty Levels</span>
+              <span class="font-semibold text-gray-900 dark:text-gray-100">3 per puzzle</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Link to Stats -->
+        <a
+          href="/stats"
+          class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-5 flex items-center gap-3 hover:shadow-md transition-shadow group block"
+        >
+          <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-sm group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">View Full Statistics</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Charts and analytics</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

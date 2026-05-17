@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export const prerender = true;
+---
+
+<BaseLayout title="Pips Solver — Daily NYT Pips Hints & Solutions" description="Get daily hints, strategies, and AI-powered explanations for every NYT Pips puzzle.">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden py-16 xl:py-20">
+    <!-- Gradient overlay background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 dark:from-blue-600/5 dark:to-purple-600/5"></div>
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 40%, rgba(37,99,235,0.07) 0%, transparent 55%), radial-gradient(circle at 75% 60%, rgba(147,51,234,0.07) 0%, transparent 55%);"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="animate-fade-up">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-8 border border-blue-100 dark:border-blue-800/50">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Updated Daily
+        </div>
+
+        <!-- Title with gradient text -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+          Today's NYT Pips
+          <span class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Hints and Solutions</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Get daily hints, strategies, and AI-powered explanations for every Pips puzzle. Solve smarter, not harder.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/today"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
+            View Today's Puzzle
+          </a>
+          <a
+            href="/pips/unlimited"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 font-semibold text-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Play Pips Game
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       WHAT IS PIPS SOLVER?
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 xl:py-20 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate-fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What is Pips Solver?</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Your ultimate companion for the daily NYT Pips puzzle. Get hints, verify solutions, and understand the logic.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Feature 1: Daily Puzzle Solutions -->
+        <div class="animate-fade-up bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-800 p-6 transition-shadow duration-300">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
+            <!-- Puzzle icon -->
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Daily Puzzle Solutions</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Complete solutions for every NYT Pips puzzle, updated daily. Browse Easy, Medium, and Hard difficulties with full grid layouts.
+          </p>
+        </div>
+
+        <!-- Feature 2: Progressive Hints -->
+        <div class="animate-fade-up delay-100 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-800 p-6 transition-shadow duration-300">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5">
+            <!-- Zap icon -->
+            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Progressive Hints</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            Stuck? Reveal one domino placement at a time. Our hint system never spoils the whole puzzle — just enough to keep you moving forward.
+          </p>
+        </div>
+
+        <!-- Feature 3: Strategic Insights -->
+        <div class="animate-fade-up delay-200 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-800 p-6 transition-shadow duration-300">
+          <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
+            <!-- Target icon -->
+            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Strategic Insights</h3>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            AI-powered explanations break down each puzzle's logic step by step. Learn which regions to tackle first and why placements are forced.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HOW TO PLAY PIPS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 xl:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate-fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How to Play Pips</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Master the rules in minutes. Pips combines logic, math, and spatial reasoning.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Left: Game Rules -->
+        <div class="animate-fade-up bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-6 sm:p-8">
+          <h3 class="text-xl font-semibold mb-5 flex items-center gap-2 text-gray-900 dark:text-gray-100">
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+            Game Rules
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 dark:text-gray-300">The grid is divided into colored regions, each with a mathematical condition.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 dark:text-gray-300">Place all dominoes (numbered tile pairs) onto the grid.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 dark:text-gray-300">Each domino covers exactly two adjacent cells — horizontally or vertically.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 dark:text-gray-300">Every cell must be covered by exactly one domino — no gaps, no overlaps.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 dark:text-gray-300">The numbers in each region must satisfy the region's condition to win.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Region Conditions -->
+        <div class="animate-fade-up delay-100">
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-100 dark:border-blue-800/50 p-6 sm:p-8">
+            <h3 class="text-xl font-semibold mb-5 flex items-center gap-2 text-gray-900 dark:text-gray-100">
+              <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+              Region Conditions
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-5">Each region has a constraint that its numbers must satisfy:</p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-white/80 dark:bg-gray-900/50">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-lg font-bold">=</span>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-gray-100">Equals</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">All cells must contain the same number</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-white/80 dark:bg-gray-900/50">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 text-lg font-bold">≠</span>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-gray-100">Unequal</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">All cells must contain different numbers</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-white/80 dark:bg-gray-900/50">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 text-lg font-bold">5</span>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-gray-100">Sum</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Cells must add up to the target value</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-white/80 dark:bg-gray-900/50">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 text-lg font-bold">&lt;7</span>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-gray-100">Less Than</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">All cells must be less than the value</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-white/80 dark:bg-gray-900/50">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-400 text-lg font-bold">&gt;3</span>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-gray-100">Greater Than</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">All cells must be greater than the value</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       WHY PLAYERS LOVE PIPS SOLVER
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 xl:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="animate-fade-up rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden">
+        <!-- Decorative circles -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+          <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/3 translate-y-1/3"></div>
+        </div>
+
+        <div class="relative text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">Why Players Love Pips Solver</h2>
+          <p class="text-blue-100 mb-10 max-w-xl mx-auto text-lg">
+            Join thousands of puzzle enthusiasts who improve their skills daily.
+          </p>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold mb-1">Daily</div>
+              <div class="text-blue-200 text-sm sm:text-base font-medium">Updates</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold mb-1">All</div>
+              <div class="text-blue-200 text-sm sm:text-base font-medium">Difficulties</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold mb-1">Smart</div>
+              <div class="text-blue-200 text-sm sm:text-base font-medium">Hints</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold mb-1">100%</div>
+              <div class="text-blue-200 text-sm sm:text-base font-medium">Accurate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQs
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 xl:py-20 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate-fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Everything you need to know about Pips Solver.</p>
+      </div>
+
+      <div class="space-y-4 animate-fade-up">
+        <!-- FAQ 1 -->
+        <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800" open>
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 dark:text-gray-100 list-none select-none">
+            <span>What is Pips Puzzle?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-3 leading-relaxed">
+            Pips is a logic puzzle published daily in the New York Times. Similar to Sudoku, you place dominoes (numbered tiles) on a grid so that each region satisfies its mathematical condition — equal, not equal, sum, less than, or greater than.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 dark:text-gray-100 list-none select-none">
+            <span>How do the difficulty levels work?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-3 leading-relaxed">
+            Each daily puzzle comes in three difficulty levels. Easy puzzles have simpler region conditions and fewer constraints. Medium adds more complex interactions. Hard requires advanced logic and careful deduction to solve.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 dark:text-gray-100 list-none select-none">
+            <span>Can I play past puzzles?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-3 leading-relaxed">
+            Yes! Visit the Archive page to browse and play any puzzle from previous dates. You can also use the calendar picker to navigate to specific days.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 dark:text-gray-100 list-none select-none">
+            <span>What does the AI Explanation do?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-3 leading-relaxed">
+            Our AI analyzes each puzzle and provides a step-by-step breakdown of the solving logic. It explains which regions to tackle first, what deductions can be made, and why certain placements are forced.
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="group bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 dark:text-gray-100 list-none select-none">
+            <span>Is Pips Solver free to use?</span>
+            <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-gray-600 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-3 leading-relaxed">
+            Yes, Pips Solver is completely free. You can view hints, solutions, AI explanations, and play the unlimited game mode without any cost or registration.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 xl:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-up">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Solve?</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">
+        Start solving today's puzzle or challenge yourself with unlimited random puzzles.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/today"
+          class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+          </svg>
+          View Today's Puzzle
+        </a>
+        <a
+          href="/pips/unlimited"
+          class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 font-semibold text-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all hover:-translate-y-0.5"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Play Pips Game
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
